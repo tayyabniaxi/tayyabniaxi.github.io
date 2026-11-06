@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Returning to SafeNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Returning to SafeNest…</h1>
+  <p class="muted">If the app does not open, <a id="open" href="#">tap here</a>.</p>
+</main>
+<script>
+  // Dropbox only redirects to https pages: hand the sign-in result back to the app.
+  var target = 'safenest://oauth' + window.location.search;
+  document.getElementById('open').href = target;
+  window.location.replace(target);
+</script>
+</body>
+</html>
